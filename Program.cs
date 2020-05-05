@@ -20,6 +20,7 @@ namespace demoapp
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseKestrel(options => { options.listen(IPAddress.Any, port:80); });
                     webBuilder.UseStartup<Startup>();
                 });
     }
